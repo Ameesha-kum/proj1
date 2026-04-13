@@ -4,7 +4,8 @@
 
   </head>
   <body>
-    <h1>
+    <button id="toggleH1Btn" type="button">Hide H1</button>
+    <h1 id="main-heading">
       H-Hyper : Being Super Interactive (HTML is very interactive as it can be executed in any browser, and can get the date from anywhere in the Web
       <ul>
         <li> Anchor tag "a"</li>
@@ -42,5 +43,15 @@
       TS: TypeScript is the new language which is strongly typed 
       TS gets compiled into JS and then executed in HTML.
     </h2>
+    <script>
+      const toggleButton = document.getElementById('toggleH1Btn');
+      const mainHeading = document.getElementById('main-heading');
+
+      toggleButton.addEventListener('click', () => {
+        const isHidden = mainHeading.style.display === 'none';
+        mainHeading.style.display = isHidden ? '' : 'none';
+        toggleButton.textContent = isHidden ? 'Hide H1' : 'Show H1';
+      });
+    </script>
   </body>
 </html>
